@@ -1,11 +1,16 @@
-<div><%= @player1_name %> vs. <%= @player2_name %></div>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css">
 
-<div><%= @player1_name %>: <%= @player1_hit_points %>/100 HP</div>
+<div class="wrapper">
+  <h1><%= @player1_name %> vs. <%= @player2_name %></h1>
 
-<div><%= @player2_name %>: <%= @player2_hit_points %>/100 HP</div>
+  <p><%= @player1_name %>: <%= @player1_hit_points %>/100 HP</p>
 
-<div><%= @hugger_name %>'s turn!</div>
+  <p><%= @player2_name %>: <%= @player2_hit_points %>/100 HP</p>
 
-<form action="/attack">
-  <input type="submit" value="Hug">
-</form>
+  <p><%= @hugger_name %>'s turn!</p>
+
+  <form action="/attack">
+    <input type="submit" value="Hug!!!" class="button">
+  </form>
+</div>

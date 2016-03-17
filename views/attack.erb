@@ -1,5 +1,16 @@
-<div><%= @hugger_name %> has hugged <%= @huggee_name %></div>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="main.css">
 
-<div><%= @huggee_name %> has received 10HP </div>
+<div class="wrapper">
+  <h1><%= @hugger_name %> has hugged <%= @huggee_name %></h1>
 
-<div><a href="/play">OK</a></div>
+  <p><%= @huggee_name %> has received <em>10HP</em> </p>
+
+  <!-- <div><a href="/play">OK</a></div> -->
+  <p>
+    <form action="/play">
+      <input type="submit" value="Next round" class="button">
+    </form>
+  </p>
+
+</div>
