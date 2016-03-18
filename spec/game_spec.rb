@@ -23,4 +23,12 @@ describe Game do
       expect(game.huggee).to eq player2
     end
   end
+
+  describe '#winner?' do
+    it 'checks if any player has 100 hp' do
+      allow(player1).to receive(:hit_points).and_return(100)
+      expect(game.winner?).to be_truthy
+    end
+  end
+  
 end

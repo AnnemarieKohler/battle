@@ -16,4 +16,10 @@ class Game
   def huggee
     players.select {|player| player != hugger}.first
   end
+
+  def winner?
+    @player1.hit_points == 100 || @player2.hit_points == 100
+  end
+
+
 end
