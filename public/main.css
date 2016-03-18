@@ -2,6 +2,7 @@ body {
   margin-top: 15%;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
+  background-color: rgba(127, 19, 19, 0.1);
 }
 
 h1 {

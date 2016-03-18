@@ -1,8 +1,8 @@
 describe Player do
   subject(:player) { described_class.new name}
   let(:name) { double :name }
-  let(:player2_in_turn) { double :player2, hugs: nil, turn: true}
-  let(:player2_not_in_turn) { double :player2, hugs: nil, turn: false}
+  let(:player2_in_turn) { double :player2_in_turn, hugs: nil, turn: true}
+  let(:player2_not_in_turn) { double :player2_not_in_turn, hugs: nil, turn: false}
 
   describe '#initialize' do
     it 'returns the player\'s name' do
@@ -12,7 +12,7 @@ describe Player do
       expect(player.hit_points).to eq described_class::HIT_POINTS
     end
     it 'initialises with turn: true' do
-      expect(player.turn).to eq true
+      expect(player.in_turn).to eq true
     end
   end
 
