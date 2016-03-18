@@ -1,18 +1,16 @@
 class Player
 
-  HIT_POINTS = 0
+  HUG_POINTS = 0
 
-  attr_accessor :name, :hit_points, :in_turn
+  attr_accessor :name, :hug_points
 
-  def initialize(name, hit_points: HIT_POINTS)
-    @in_turn = true
+  def initialize(name, hug_points: HUG_POINTS)
     @name = name
-    @hit_points = hit_points
+    @hug_points = hug_points
   end
 
-  def hugs(opponent)
-    @in_turn = !@in_turn
-    opponent.in_turn = !opponent.in_turn
-    opponent.hit_points += 10
+  def hugs
+    @hug_points += 10
   end
+  
 end

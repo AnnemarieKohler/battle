@@ -2,11 +2,10 @@
 <link rel="stylesheet" href="main.css">
 
 <div class="wrapper">
-  <h1><%= @hugger_name %> has hugged <%= @huggee_name %></h1>
+  <h1><%= @hugger_name %> has successfully hugged <%= @huggee_name %></h1>
 
-  <p><%= @huggee_name %> has received <em>10HP</em> </p>
+  <p><%= @hugger_name %> receives <em>10HP</em> </p>
 
-  <!-- <div><a href="/play">OK</a></div> -->
   <p>
     <form action="/play">
       <input type="submit" value="Next round!" class="button">

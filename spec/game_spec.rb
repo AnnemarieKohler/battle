@@ -2,13 +2,28 @@ require 'player'
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new player1, player2}
-  let(:player1) { Player.new 'Player 1' }
-  let(:player2) { Player.new 'Player 2' }
+  subject(:game) { described_class.new player1, player2 }
+  let(:player1) { double :player1, name: 'P1' }
+  let(:player2) { double :player2, name: 'P2' }
 
   describe '#initialize' do
     it 'initializes with two players' do
       expect(game.players).to include player1, player2
+    end
+    it 'sets current player to player one' do
+      expect(game.in_turn).to eq player1
+    end
+  end
+
+  # describe '.start_game' do
+  #   it 'returns a new game instance' do
+  #     expect(described_class.start_game).to eq game
+  #   end
+  # end
+  describe '#swap_turns' do
+    it 'swaps hugger and huggee after each hug' do
+      2.times { game.swap_turns }
+      expect(game.in_turn).to eq player1
     end
   end
 
@@ -26,7 +41,7 @@ describe Game do
 
   context 'Find winner' do
     before(:example) do
-      allow(player1).to receive(:hit_points).and_return(100)
+      allow(player1).to receive(:hug_points).and_return(100)
     end
 
     describe '#winner?' do

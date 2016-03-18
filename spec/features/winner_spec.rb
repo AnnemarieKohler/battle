@@ -5,6 +5,6 @@ feature 'Show winner of the game' do
       click_button 'Hug'
       click_button 'Next round!'
     end
-    expect(page).to have_content("P2 has won!")
+    expect(page).to have_content("P1 has won!")
   end
 end

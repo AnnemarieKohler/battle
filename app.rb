@@ -19,8 +19,8 @@ class Battle < Sinatra::Base
   get '/play' do
     @player1_name = $game.players[0].name
     @player2_name = $game.players[1].name
-    @player1_hit_points = $game.players[0].hit_points
-    @player2_hit_points = $game.players[1].hit_points
+    @player1_hug_points = $game.players[0].hug_points
+    @player2_hug_points = $game.players[1].hug_points
     @hugger_name = $game.hugger.name
     @display_winner = $game.display_winner
     @check_if_winner = $game.winner?
@@ -32,10 +32,11 @@ class Battle < Sinatra::Base
     @huggee_name = $game.huggee.name
     @player1 = $game.players[0]
     @player2 = $game.players[1]
-    @player2_hit_points = @player2.hit_points
+    @player2_hug_points = @player2.hug_points
     @hugger = $game.hugger
     @huggee = $game.huggee
-    @hugger.hugs(@huggee)
+    @hugger.hugs
+    $game.swap_turns
     erb(:attack)
   end
 
