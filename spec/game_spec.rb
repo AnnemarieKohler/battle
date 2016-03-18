@@ -24,11 +24,23 @@ describe Game do
     end
   end
 
-  describe '#winner?' do
-    it 'checks if any player has 100 hp' do
+  context 'Find winner' do
+    before(:example) do
       allow(player1).to receive(:hit_points).and_return(100)
-      expect(game.winner?).to be_truthy
+    end
+
+    describe '#winner?' do
+      it 'checks if any player has 100 hp' do
+        expect(game.winner?).to be_truthy
+      end
+    end
+
+    describe '#display_winner' do
+      it 'returns name of the winner' do
+        expect(game.display_winner).to eq player1.name
+      end
     end
   end
-  
+
+
 end

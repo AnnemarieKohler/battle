@@ -22,6 +22,8 @@ class Battle < Sinatra::Base
     @player1_hit_points = $game.players[0].hit_points
     @player2_hit_points = $game.players[1].hit_points
     @hugger_name = $game.hugger.name
+    @display_winner = $game.display_winner
+    @check_if_winner = $game.winner?
     erb(:play)
   end
 

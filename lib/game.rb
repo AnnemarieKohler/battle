@@ -18,8 +18,11 @@ class Game
   end
 
   def winner?
-    @player1.hit_points == 100 || @player2.hit_points == 100
+    player1.hit_points == 100 || player2.hit_points == 100
   end
 
+  def display_winner
+    player1.hit_points == 100 ? player1.name : player2.name
+  end
 
 end

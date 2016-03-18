@@ -5,18 +5,18 @@ feature "Play page" do
   end
 
   scenario "Display players names" do
-    expect(page).to have_content "Shane vs. Anne"
+    expect(page).to have_content "P1 vs. P2"
   end
 
   scenario "Display player1's HP" do
-    expect(page).to have_content "Shane: 0/100 HP"
+    expect(page).to have_content "P1: 0/100 HP"
   end
 
   scenario "Display player2's HP" do
-    expect(page).to have_content "Anne: 0/100 HP"
+    expect(page).to have_content "P2: 0/100 HP"
   end
 
   scenario "Display the turn" do
-    expect(page).to have_content "Shane's turn!"
+    expect(page).to have_content "P1's turn!"
   end
 end

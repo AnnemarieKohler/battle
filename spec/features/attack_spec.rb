@@ -8,11 +8,11 @@ feature 'Attack opponent' do
   end
 
   scenario 'attack player two' do
-    expect(page).to have_content('Shane has hugged Anne')
+    expect(page).to have_content('P1 has hugged P2')
   end
 
   scenario 'opponent receives 10HP' do
-    expect(page).to have_content('Anne has received 10HP')
+    expect(page).to have_content('P2 has received 10HP')
   end
 
 end

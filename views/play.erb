@@ -8,9 +8,20 @@
 
   <p><%= @player2_name %>: <%= @player2_hit_points %>/100 HP</p>
 
-  <p><%= @hugger_name %>'s turn!</p>
+  <% if @check_if_winner %>
+    <p><%= @display_winner %> has won!</p>
+  <% else %>
+    <p><%= @hugger_name %>'s turn!</p>
 
-  <form action="/attack">
-    <input type="submit" value="Hug!!!" class="button">
-  </form>
+    <form action="/attack">
+      <input type="submit" value="Hug!!!" class="button">
+    </form>
+  <% end %>
+
+
+
+
+
+
+
 </div>
