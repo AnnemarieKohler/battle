@@ -17,8 +17,6 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    p $game.players[0].in_turn
-    p $game.players[1].in_turn
     @player1_name = $game.players[0].name
     @player2_name = $game.players[1].name
     @player1_hit_points = $game.players[0].hit_points
