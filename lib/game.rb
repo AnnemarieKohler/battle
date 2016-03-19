@@ -9,9 +9,13 @@ class Game
     @in_turn = @player1
   end
 
-  # def self.start_game
-  #    @@start = self.new @player1, @player2
-  # end
+  def self.create player1, player2
+    @game = Game.new player1, player2
+  end
+
+  def self.instance
+     @game
+  end
 
   def swap_turns
     @in_turn == @player1 ? @in_turn = @player2 : @in_turn = @player1

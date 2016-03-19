@@ -15,11 +15,6 @@ describe Game do
     end
   end
 
-  # describe '.start_game' do
-  #   it 'returns a new game instance' do
-  #     expect(described_class.start_game).to eq game
-  #   end
-  # end
   describe '#swap_turns' do
     it 'swaps hugger and huggee after each hug' do
       2.times { game.swap_turns }

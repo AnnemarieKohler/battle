@@ -9,34 +9,37 @@ class Battle < Sinatra::Base
     erb(:index)
   end
 
+  before do
+    @game = Game.instance
+  end
+
   post '/names' do
     player1 = Player.new(params[:player_one])
     player2 = Player.new(params[:player_two])
-    $game = Game.new(player1,player2)
+    @game = Game.create(player1,player2)
     redirect to('/play')
   end
 
   get '/play' do
-    @player1_name = $game.players[0].name
-    @player2_name = $game.players[1].name
-    @player1_hug_points = $game.players[0].hug_points
-    @player2_hug_points = $game.players[1].hug_points
-    @hugger_name = $game.hugger.name
-    @display_winner = $game.display_winner
-    @check_if_winner = $game.winner?
+    @player1_name = @game.players[0].name
+    @player2_name = @game.players[1].name
+    @player1_hug_points = @game.players[0].hug_points
+    @player2_hug_points = @game.players[1].hug_points
+    @hugger_name = @game.hugger.name
+    @display_winner = @game.display_winner
+    @check_if_winner = @game.winner?
     erb(:play)
   end
 
   get '/attack' do
-    @hugger_name = $game.hugger.name
-    @huggee_name = $game.huggee.name
-    @player1 = $game.players[0]
-    @player2 = $game.players[1]
-    @player2_hug_points = @player2.hug_points
-    @hugger = $game.hugger
-    @huggee = $game.huggee
+    @hugger_name = @game.hugger.name
+    @huggee_name = @game.huggee.name
+    @player1_hug_points = @game.players[0].hug_points
+    @player2_hug_points = @game.players[1].hug_points
+    @hugger = @game.hugger
+    @huggee = @game.huggee
     @hugger.hugs
-    $game.swap_turns
+    @game.swap_turns
     erb(:attack)
   end
 
